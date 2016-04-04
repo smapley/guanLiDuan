@@ -58,7 +58,8 @@ public class MingXi extends Activity {
     }
 
     private void getData() {
-        getMingxiService.load(new GetMingxiParams(MyData.UserName));
+        getMingxiService.load(new GetMingxiParams(getIntent().getStringExtra("name")));
+
     }
 
 

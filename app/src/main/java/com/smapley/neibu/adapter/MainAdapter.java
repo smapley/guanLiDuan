@@ -58,7 +58,7 @@ public class MainAdapter extends BaseAdapter {
 
         viewHolder.text.setText(map.get("zhang"));
         switch (Integer.parseInt(map.get("type"))){
-            case 0:
+            case 2:
                 viewHolder.type.setText("会员");
                 break;
             case 1:

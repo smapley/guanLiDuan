@@ -75,10 +75,14 @@ public class ZhangDan extends Fragment {
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.title_item1:
-                startActivity(new Intent(getActivity(), MingXi.class));
+                Intent intent=new Intent(getActivity(), MingXi.class);
+                intent.putExtra("name",getArguments().getString("name") );
+                startActivity(intent);
                 break;
             case R.id.title_item3:
-                startActivity(new Intent(getActivity(), DataSet.class));
+                Intent intent2=new Intent(getActivity(), DataSet.class);
+                intent2.putExtra("name",getArguments().getString("name") );
+                startActivity(intent2);
                 break;
         }
     }

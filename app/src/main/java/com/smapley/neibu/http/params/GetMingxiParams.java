@@ -12,6 +12,6 @@ public class GetMingxiParams extends RequestParams {
 
     public GetMingxiParams(String user1) {
         super(MyData.URL_getMingxi);
-        addBodyParameter("user1", user1);
+        addBodyParameter("zhanghao", user1);
     }
 }

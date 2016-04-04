@@ -11,9 +11,10 @@ import org.xutils.http.RequestParams;
  */
 public class GetDyszParams extends RequestParams {
 
-    public GetDyszParams(String user1) {
+    public GetDyszParams(String user1,String zhanghao) {
         super(MyData.URL_getDysz);
         addBodyParameter("user1", user1);
+        addBodyParameter("zhanghao", zhanghao);
         try {
             LogUtil.d(toJSONString());
         }catch (Exception e){

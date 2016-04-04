@@ -11,20 +11,21 @@ import org.xutils.http.RequestParams;
  */
 public class UpdateDyszParams extends RequestParams {
 
-    public UpdateDyszParams(String user1, String mi,String ming,String beizhu,String xinyong,String erdpei,String sandpei,
+    public UpdateDyszParams(String user1, String mi,String zhanghao,String ming,String beizhu,String xinyong,String erdpei,String sandpei,
                             String sidpei,String erxpei,String sanxpei,String sixpei) {
         super(MyData.URL_updateDysz);
         addBodyParameter("user1", user1);
         addBodyParameter("mi", mi);
+        addBodyParameter("zhanghao", zhanghao);
         addBodyParameter("ming", ming);
         addBodyParameter("beizhu", beizhu);
         addBodyParameter("xinyong", xinyong);
-        addBodyParameter("erdpei", erdpei);
-        addBodyParameter("sandpei", sandpei);
-        addBodyParameter("sidpei", sidpei);
-        addBodyParameter("erxpei", erxpei);
-        addBodyParameter("sanxpei", sanxpei);
-        addBodyParameter("sixpei", sixpei);
+        addBodyParameter("erdfan", erdpei);
+        addBodyParameter("sandfan", sandpei);
+        addBodyParameter("sidfan", sidpei);
+        addBodyParameter("erxfan", erxpei);
+        addBodyParameter("sanxfan", sanxpei);
+        addBodyParameter("sixfan", sixpei);
         try {
             LogUtil.d(toJSONString());
         }catch (Exception e){

@@ -1,9 +1,12 @@
 package com.smapley.neibu.http.service;
 
 
+import android.util.Log;
+
 import com.smapley.neibu.http.callback.SimpleCallback;
 import com.smapley.neibu.http.params.GetMingxiParams;
 
+import org.xutils.common.util.LogUtil;
 import org.xutils.x;
 
 /**
@@ -16,6 +19,7 @@ public abstract class GetMingxiService {
         x.http().post(params, new SimpleCallback() {
             @Override
             public void Success(final String data) {
+                LogUtil.e(data);
                 Succ(data);
             }
         });

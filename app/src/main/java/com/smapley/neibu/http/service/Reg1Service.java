@@ -18,6 +18,7 @@ public abstract class Reg1Service {
         x.http().post(params, new SimpleCallback() {
             @Override
             public void Success(final String data) {
+                LogUtil.d(data);
                 Succ(data);
             }
         });

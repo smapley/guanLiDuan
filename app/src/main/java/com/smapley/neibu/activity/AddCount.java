@@ -46,7 +46,7 @@ public class AddCount extends Activity {
         @Override
         public void Succ(String data) {
             int result= JSON.parseObject(data,new TypeReference<Integer>(){});
-            if(result>0){
+            if(result==1){
                 Toast.makeText(AddCount.this,"添加成功！",Toast.LENGTH_SHORT).show();
                 MainActivity.getInstance().refresh();
                 finish();

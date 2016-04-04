@@ -3,9 +3,11 @@ package com.smapley.neibu.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +46,19 @@ public class DataSet extends Activity {
     private EditText beizhu;
     @ViewInject(R.id.dayinji_xinyong)
     private EditText xinyong;
+
+    @ViewInject(R.id.jin1_layout)
+    private RelativeLayout jin1_layout;
+    @ViewInject(R.id.jin2_layout)
+    private RelativeLayout jin2_layout;
+    @ViewInject(R.id.jin3_layout)
+    private RelativeLayout jin3_layout;
+    @ViewInject(R.id.jin4_layout)
+    private RelativeLayout jin4_layout;
+    @ViewInject(R.id.jin5_layout)
+    private RelativeLayout jin5_layout;
+    @ViewInject(R.id.jin6_layout)
+    private RelativeLayout jin6_layout;
 
     @ViewInject(R.id.jin1_text)
     private TextView jin1_text;
@@ -86,6 +101,8 @@ public class DataSet extends Activity {
 
     private List<TextView> jinList;
     private List<TextView> jinIcoList;
+    private List<View> jinLayoutList;
+    private List<EditText> editTextList;
     private TextView jin_text;
     @ViewInject(R.id.print_keybord)
     private View print_keybord;
@@ -94,14 +111,15 @@ public class DataSet extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        getDyszService.load(new GetDyszParams(MyData.UserName));
+        getDyszService.load(new GetDyszParams(MyData.UserName, getIntent().getStringExtra("name")));
         item2.setText("资料设置");
         item3.setText("保存");
+        item3.setVisibility(View.INVISIBLE);
         item3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateDyszService.load(new UpdateDyszParams(MyData.UserName, MyData.PassWord,
-                        name.getText().toString(), beizhu.getText().toString(),xinyong.getText().toString(),
+                updateDyszService.load(new UpdateDyszParams(MyData.UserName, MyData.PassWord, getIntent().getStringExtra("name"),
+                        name.getText().toString(), beizhu.getText().toString(), xinyong.getText().toString(),
                         jin1_text.getText().toString(), jin2_text.getText().toString(), jin3_text.getText().toString(),
                         jin4_text.getText().toString(), jin5_text.getText().toString(), jin6_text.getText().toString()));
             }
@@ -133,7 +151,7 @@ public class DataSet extends Activity {
         beizhu.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
-                if(b){
+                if (b) {
                     print_keybord.setVisibility(View.GONE);
                 }
             }
@@ -141,6 +159,23 @@ public class DataSet extends Activity {
 
         jinList = new ArrayList<>();
         jinIcoList = new ArrayList<>();
+        jinLayoutList =new ArrayList<>();
+        editTextList =new ArrayList<>();
+
+        editTextList.add(name);
+        editTextList.add(beizhu);
+        editTextList.add(xinyong);
+
+        for(EditText editText:editTextList){
+            editText.setEnabled(false);
+        }
+
+        jinLayoutList.add(jin1_layout);
+        jinLayoutList.add(jin2_layout);
+        jinLayoutList.add(jin3_layout);
+        jinLayoutList.add(jin4_layout);
+        jinLayoutList.add(jin5_layout);
+        jinLayoutList.add(jin6_layout);
 
         jinList.add(jin1_text);
         jinList.add(jin2_text);
@@ -157,27 +192,44 @@ public class DataSet extends Activity {
         jinIcoList.add(jin6_ico);
     }
 
+    private boolean quanxian=false;
     private GetDyszService getDyszService = new GetDyszService() {
         @Override
         public void Succ(String data) {
             try {
+                Log.e("result",data);
                 Map<String, String> map = JSON.parseObject(data, new TypeReference<Map<String, String>>() {
                 });
+                quanxian= map.get("qx").equals("1")?true:false;
+//                quanxian=true;
+                if(quanxian){
+                    item3.setVisibility(View.VISIBLE);
+                    for(View view :jinLayoutList){
+                        view.setBackgroundResource(R.drawable.textview_circle2s);
+                    }
+                    for(EditText editText:editTextList){
+                        editText.setBackgroundResource(R.drawable.textview_circle2s);
+                        editText.setEnabled(true);
+                        editText.setFocusableInTouchMode(true);
+                        editText.setFocusable(true);
+                        editText.requestFocus();
+                    }
+                }
                 name.setText(map.get("ming"));
                 beizhu.setText(map.get("beizhu"));
                 xinyong.setText(map.get("xinyong"));
-                jin1_text.setText(map.get("erdpei"));
-                jin2_text.setText(map.get("sandpei"));
-                jin3_text.setText(map.get("sidpei"));
-                jin4_text.setText(map.get("erxpei"));
-                jin5_text.setText(map.get("sanxpei"));
-                jin6_text.setText(map.get("sixpei"));
-                yiya1.setText(map.get("erdfan"));
-                yiya2.setText(map.get("sandfan"));
-                yiya3.setText(map.get("sidfan"));
-                yiya4.setText(map.get("erxfan"));
-                yiya5.setText(map.get("sanxfan"));
-                yiya6.setText(map.get("sixfan"));
+                jin1_text.setText(map.get("erdfan"));
+                jin2_text.setText(map.get("sandfan"));
+                jin3_text.setText(map.get("sidfan"));
+                jin4_text.setText(map.get("erxfan"));
+                jin5_text.setText(map.get("sanxfan"));
+                jin6_text.setText(map.get("sixfan"));
+                yiya1.setText(map.get("erdpei"));
+                yiya2.setText(map.get("sandpei"));
+                yiya3.setText(map.get("sidpei"));
+                yiya4.setText(map.get("erxpei"));
+                yiya5.setText(map.get("sanxpei"));
+                yiya6.setText(map.get("sixpei"));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -190,12 +242,12 @@ public class DataSet extends Activity {
         public void Succ(String data) {
             int result= JSON.parseObject(data, new TypeReference<Integer>() {
             });
-            if(result>0){
+            if(result==1){
                 Toast.makeText(DataSet.this,"保存成功！",Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(DataSet.this,"保存失败！",Toast.LENGTH_SHORT).show();
             }
-            getDyszService.load(new GetDyszParams(MyData.UserName));
+            getDyszService.load(new GetDyszParams(MyData.UserName,getIntent().getStringExtra("name")));
 
         }
     };
@@ -256,25 +308,27 @@ public class DataSet extends Activity {
     }
 
         private void editItem(int position) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(name.getWindowToken(), 0);
-            for (int i = 0; i < 6; i++) {
-                if (position == i) {
-                    jinIcoList.get(i).setVisibility(View.VISIBLE);
-                    jin_text = jinList.get(i);
-                    jin_text.setText("");
-                    NowPostion = i;
-                } else {
-                    jinIcoList.get(i).setVisibility(View.GONE);
+            if(quanxian) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(name.getWindowToken(), 0);
+                for (int i = 0; i < 6; i++) {
+                    if (position == i) {
+                        jinIcoList.get(i).setVisibility(View.VISIBLE);
+                        jin_text = jinList.get(i);
+                        jin_text.setText("");
+                        NowPostion = i;
+                    } else {
+                        jinIcoList.get(i).setVisibility(View.GONE);
 
+                    }
                 }
+                new ThreadSleep().sleep(500, new ThreadSleep.Callback() {
+                    @Override
+                    public void onCallback(ThreadSleep threadSleep, int number) {
+                        print_keybord.setVisibility(View.VISIBLE);
+                    }
+                });
             }
-            new ThreadSleep().sleep(500, new ThreadSleep.Callback() {
-                @Override
-                public void onCallback(ThreadSleep threadSleep, int number) {
-                    print_keybord.setVisibility(View.VISIBLE);
-                }
-            });
         }
 
 }
