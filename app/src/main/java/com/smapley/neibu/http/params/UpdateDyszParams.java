@@ -20,12 +20,12 @@ public class UpdateDyszParams extends RequestParams {
         addBodyParameter("ming", ming);
         addBodyParameter("beizhu", beizhu);
         addBodyParameter("xinyong", xinyong);
-        addBodyParameter("erdfan", erdpei);
-        addBodyParameter("sandfan", sandpei);
-        addBodyParameter("sidfan", sidpei);
-        addBodyParameter("erxfan", erxpei);
-        addBodyParameter("sanxfan", sanxpei);
-        addBodyParameter("sixfan", sixpei);
+        addBodyParameter("erd", erdpei);
+        addBodyParameter("sand", sandpei);
+        addBodyParameter("sid", sidpei);
+        addBodyParameter("erx", erxpei);
+        addBodyParameter("sanx", sanxpei);
+        addBodyParameter("six", sixpei);
         try {
             LogUtil.d(toJSONString());
         }catch (Exception e){

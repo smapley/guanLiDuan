@@ -137,9 +137,7 @@
                     style="@style/hezhuang_text"
                     android:text="二字定" />
 
-                <TextView
-                    android:id="@+id/yiya1"
-                    style="@style/hezhuang_text" />
+
 
                 <RelativeLayout
                     android:id="@+id/jin1_layout"
@@ -166,7 +164,9 @@
                         android:lines="1"
                         android:visibility="gone" />
                 </RelativeLayout>
-
+                <TextView
+                    android:id="@+id/yiya1"
+                    style="@style/hezhuang_text" />
 
             </LinearLayout>
 
@@ -178,9 +178,6 @@
                     style="@style/hezhuang_text"
                     android:text="三字定" />
 
-                <TextView
-                    android:id="@+id/yiya2"
-                    style="@style/hezhuang_text" />
 
                 <RelativeLayout
                     android:id="@+id/jin2_layout"
@@ -208,6 +205,9 @@
                         android:visibility="gone" />
                 </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/yiya2"
+                    style="@style/hezhuang_text" />
 
             </LinearLayout>
 
@@ -219,9 +219,6 @@
                     style="@style/hezhuang_text"
                     android:text="四字定" />
 
-                <TextView
-                    android:id="@+id/yiya3"
-                    style="@style/hezhuang_text" />
 
                 <RelativeLayout
                     android:id="@+id/jin3_layout"
@@ -250,6 +247,9 @@
                 </RelativeLayout>
 
 
+                <TextView
+                    android:id="@+id/yiya3"
+                    style="@style/hezhuang_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -260,9 +260,7 @@
                     style="@style/hezhuang_text"
                     android:text="二字现" />
 
-                <TextView
-                    android:id="@+id/yiya4"
-                    style="@style/hezhuang_text" />
+
 
                 <RelativeLayout
                     android:id="@+id/jin4_layout"
@@ -289,7 +287,9 @@
                         android:lines="1"
                         android:visibility="gone" />
                 </RelativeLayout>
-
+                <TextView
+                    android:id="@+id/yiya4"
+                    style="@style/hezhuang_text" />
 
             </LinearLayout>
 
@@ -301,9 +301,7 @@
                     style="@style/hezhuang_text"
                     android:text="三字现" />
 
-                <TextView
-                    android:id="@+id/yiya5"
-                    style="@style/hezhuang_text" />
+
 
                 <RelativeLayout
                     android:id="@+id/jin5_layout"
@@ -330,7 +328,9 @@
                         android:lines="1"
                         android:visibility="gone" />
                 </RelativeLayout>
-
+                <TextView
+                    android:id="@+id/yiya5"
+                    style="@style/hezhuang_text" />
 
             </LinearLayout>
 
@@ -342,9 +342,7 @@
                     style="@style/hezhuang_text"
                     android:text="四字现" />
 
-                <TextView
-                    android:id="@+id/yiya6"
-                    style="@style/hezhuang_text" />
+
 
                 <RelativeLayout
                     android:id="@+id/jin6_layout"
@@ -371,7 +369,9 @@
                         android:lines="1"
                         android:visibility="gone" />
                 </RelativeLayout>
-
+                <TextView
+                    android:id="@+id/yiya6"
+                    style="@style/hezhuang_text" />
 
             </LinearLayout>
 

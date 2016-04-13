@@ -65,7 +65,7 @@ public class AddCount extends Activity {
     }
 
     private void upData() {
-        reg1Service.load(new Reg1Params(MyData.UserName,count.getText().toString(),
+        reg1Service.load(new Reg1Params(MyData.UserName,MyData.PassWord,count.getText().toString(),
                 password.getText().toString(),type+""));
     }
 

@@ -218,18 +218,18 @@ public class DataSet extends Activity {
                 name.setText(map.get("ming"));
                 beizhu.setText(map.get("beizhu"));
                 xinyong.setText(map.get("xinyong"));
-                jin1_text.setText(map.get("erdfan"));
-                jin2_text.setText(map.get("sandfan"));
-                jin3_text.setText(map.get("sidfan"));
-                jin4_text.setText(map.get("erxfan"));
-                jin5_text.setText(map.get("sanxfan"));
-                jin6_text.setText(map.get("sixfan"));
-                yiya1.setText(map.get("erdpei"));
-                yiya2.setText(map.get("sandpei"));
-                yiya3.setText(map.get("sidpei"));
-                yiya4.setText(map.get("erxpei"));
-                yiya5.setText(map.get("sanxpei"));
-                yiya6.setText(map.get("sixpei"));
+                jin1_text.setText(map.get("erdpei"));
+                jin2_text.setText(map.get("sandpei"));
+                jin3_text.setText(map.get("sidpei"));
+                jin4_text.setText(map.get("erxpei"));
+                jin5_text.setText(map.get("sanxpei"));
+                jin6_text.setText(map.get("sixpei"));
+                yiya1.setText(map.get("erdfan"));
+                yiya2.setText(map.get("sandfan"));
+                yiya3.setText(map.get("sidfan"));
+                yiya4.setText(map.get("erxfan"));
+                yiya5.setText(map.get("sanxfan"));
+                yiya6.setText(map.get("sixfan"));
             }catch (Exception e){
                 e.printStackTrace();
             }
