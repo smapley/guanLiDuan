@@ -107,6 +107,7 @@ public class DataSet extends Activity {
     @ViewInject(R.id.print_keybord)
     private View print_keybord;
     private int NowPostion = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,6 +140,13 @@ public class DataSet extends Activity {
 
             }
         });
+        xinyong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                print_keybord.setVisibility(View.GONE);
+
+            }
+        });
 
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -156,17 +164,25 @@ public class DataSet extends Activity {
                 }
             }
         });
+        xinyong.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    print_keybord.setVisibility(View.GONE);
+                }
+            }
+        });
 
         jinList = new ArrayList<>();
         jinIcoList = new ArrayList<>();
-        jinLayoutList =new ArrayList<>();
-        editTextList =new ArrayList<>();
+        jinLayoutList = new ArrayList<>();
+        editTextList = new ArrayList<>();
 
         editTextList.add(name);
         editTextList.add(beizhu);
         editTextList.add(xinyong);
 
-        for(EditText editText:editTextList){
+        for (EditText editText : editTextList) {
             editText.setEnabled(false);
         }
 
@@ -192,22 +208,22 @@ public class DataSet extends Activity {
         jinIcoList.add(jin6_ico);
     }
 
-    private boolean quanxian=false;
+    private boolean quanxian = false;
     private GetDyszService getDyszService = new GetDyszService() {
         @Override
         public void Succ(String data) {
             try {
-                Log.e("result",data);
+                Log.e("result", data);
                 Map<String, String> map = JSON.parseObject(data, new TypeReference<Map<String, String>>() {
                 });
-                quanxian= map.get("qx").equals("1")?true:false;
-//                quanxian=true;
-                if(quanxian){
+                quanxian = map.get("qx").equals("1") ? true : false;
+                quanxian = true;
+                if (quanxian) {
                     item3.setVisibility(View.VISIBLE);
-                    for(View view :jinLayoutList){
+                    for (View view : jinLayoutList) {
                         view.setBackgroundResource(R.drawable.textview_circle2s);
                     }
-                    for(EditText editText:editTextList){
+                    for (EditText editText : editTextList) {
                         editText.setBackgroundResource(R.drawable.textview_circle2s);
                         editText.setEnabled(true);
                         editText.setFocusableInTouchMode(true);
@@ -230,7 +246,7 @@ public class DataSet extends Activity {
                 yiya4.setText(map.get("erxfan"));
                 yiya5.setText(map.get("sanxfan"));
                 yiya6.setText(map.get("sixfan"));
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -240,14 +256,14 @@ public class DataSet extends Activity {
     private UpdateDyszService updateDyszService = new UpdateDyszService() {
         @Override
         public void Succ(String data) {
-            int result= JSON.parseObject(data, new TypeReference<Integer>() {
+            int result = JSON.parseObject(data, new TypeReference<Integer>() {
             });
-            if(result==1){
-                Toast.makeText(DataSet.this,"保存成功！",Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(DataSet.this,"保存失败！",Toast.LENGTH_SHORT).show();
+            if (result == 1) {
+                Toast.makeText(DataSet.this, "保存成功！", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(DataSet.this, "保存失败！", Toast.LENGTH_SHORT).show();
             }
-            getDyszService.load(new GetDyszParams(MyData.UserName,getIntent().getStringExtra("name")));
+            getDyszService.load(new GetDyszParams(MyData.UserName, getIntent().getStringExtra("name")));
 
         }
     };
@@ -307,28 +323,28 @@ public class DataSet extends Activity {
         }
     }
 
-        private void editItem(int position) {
-            if(quanxian) {
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(name.getWindowToken(), 0);
-                for (int i = 0; i < 6; i++) {
-                    if (position == i) {
-                        jinIcoList.get(i).setVisibility(View.VISIBLE);
-                        jin_text = jinList.get(i);
-                        jin_text.setText("");
-                        NowPostion = i;
-                    } else {
-                        jinIcoList.get(i).setVisibility(View.GONE);
+    private void editItem(int position) {
+        if (quanxian) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(name.getWindowToken(), 0);
+            for (int i = 0; i < 6; i++) {
+                if (position == i) {
+                    jinIcoList.get(i).setVisibility(View.VISIBLE);
+                    jin_text = jinList.get(i);
+                    jin_text.setText("");
+                    NowPostion = i;
+                } else {
+                    jinIcoList.get(i).setVisibility(View.GONE);
 
-                    }
                 }
-                new ThreadSleep().sleep(500, new ThreadSleep.Callback() {
-                    @Override
-                    public void onCallback(ThreadSleep threadSleep, int number) {
-                        print_keybord.setVisibility(View.VISIBLE);
-                    }
-                });
             }
+            new ThreadSleep().sleep(500, new ThreadSleep.Callback() {
+                @Override
+                public void onCallback(ThreadSleep threadSleep, int number) {
+                    print_keybord.setVisibility(View.VISIBLE);
+                }
+            });
         }
+    }
 
 }
