@@ -19,6 +19,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.smapley.neibu.R;
 import com.smapley.neibu.activity.Gaimi;
 import com.smapley.neibu.activity.Login;
+import com.smapley.neibu.activity.ZongHuo;
 import com.smapley.neibu.http.params.Reg2Params;
 import com.smapley.neibu.http.service.GengxinService;
 import com.smapley.neibu.http.service.Reg2Service;
@@ -45,6 +46,8 @@ public class Set extends Fragment {
     private TextView set_item2;
     @ViewInject(R.id.set_item3)
     private TextView set_item3;
+    @ViewInject(R.id.set_item4)
+    private TextView set_item4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public class Set extends Fragment {
         title_item2.setText("设置");
     }
 
-    @Event({R.id.set_item1, R.id.set_item2, R.id.set_item3})
+    @Event({R.id.set_item1, R.id.set_item2, R.id.set_item3,R.id.set_item4})
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.set_item1:
@@ -79,6 +82,9 @@ public class Set extends Fragment {
                 break;
             case R.id.set_item3:
                 startActivity(new Intent(getActivity(),Gaimi.class));
+                break;
+            case R.id.set_item4:
+                startActivity(new Intent(getActivity(),ZongHuo.class));
                 break;
         }
     }

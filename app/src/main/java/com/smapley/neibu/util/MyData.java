@@ -19,6 +19,7 @@ public class MyData {
     public final static String URL_regzhuce = BASE_URL + "regzhuce.php";
     public final static String URL_getGzhanghao = BASE_URL + "getGzhanghao.php";
     public final static String URL_getMingxi = BASE_URL + "getMingxi1.php";
+    public final static String URL_getGpankou = BASE_URL + "getGpankou.php";
 
     public final static String URL_getDysz = BASE_URL + "getZiliao1.php";
     public final static String URL_updateDysz = BASE_URL + "updateZiliaoG1.php";

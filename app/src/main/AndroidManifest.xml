@@ -28,6 +28,7 @@
         <activity android:name=".activity.MingXi"/>
         <activity android:name=".activity.DataSet"/>
         <activity android:name=".activity.Gaimi"/>
+        <activity android:name=".activity.ZongHuo"/>
     </application>
 
 </manifest>
