@@ -46,6 +46,8 @@ public class DataSet extends Activity {
     private EditText beizhu;
     @ViewInject(R.id.dayinji_xinyong)
     private EditText xinyong;
+    @ViewInject(R.id.dayinji_mima)
+    private EditText mima;
 
     @ViewInject(R.id.jin1_layout)
     private RelativeLayout jin1_layout;
@@ -120,7 +122,7 @@ public class DataSet extends Activity {
             @Override
             public void onClick(View view) {
                 updateDyszService.load(new UpdateDyszParams(MyData.UserName, MyData.PassWord, getIntent().getStringExtra("name"),
-                        name.getText().toString(), beizhu.getText().toString(), xinyong.getText().toString(),
+                        name.getText().toString(), beizhu.getText().toString(), xinyong.getText().toString(),mima.getText().toString(),
                         jin1_text.getText().toString(), jin2_text.getText().toString(), jin3_text.getText().toString(),
                         jin4_text.getText().toString(), jin5_text.getText().toString(), jin6_text.getText().toString()));
             }
@@ -141,6 +143,13 @@ public class DataSet extends Activity {
             }
         });
         xinyong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                print_keybord.setVisibility(View.GONE);
+
+            }
+        });
+        mima.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 print_keybord.setVisibility(View.GONE);
@@ -172,6 +181,14 @@ public class DataSet extends Activity {
                 }
             }
         });
+        mima.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    print_keybord.setVisibility(View.GONE);
+                }
+            }
+        });
 
         jinList = new ArrayList<>();
         jinIcoList = new ArrayList<>();
@@ -181,6 +198,7 @@ public class DataSet extends Activity {
         editTextList.add(name);
         editTextList.add(beizhu);
         editTextList.add(xinyong);
+        editTextList.add(mima);
 
         for (EditText editText : editTextList) {
             editText.setEnabled(false);

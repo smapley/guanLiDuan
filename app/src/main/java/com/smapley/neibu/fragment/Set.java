@@ -49,6 +49,7 @@ public class Set extends Fragment {
     @ViewInject(R.id.set_item4)
     private TextView set_item4;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = x.view().inject(this, inflater, container);
