@@ -12,7 +12,7 @@ public class MyData {
     public static String PassWord;
     public static boolean Login = false;
 
-    private static final String BASE_URL = "http://120.25.208.188/neibu/";
+    private static final String BASE_URL = "http://120.25.208.188/xiong/";
 
     public final static String URL_reg=BASE_URL+"regG1.php";
     public final static String URL_reg1=BASE_URL+"reg8.php";
