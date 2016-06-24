@@ -11,7 +11,8 @@ import org.xutils.http.RequestParams;
  */
 public class UpdateDyszParams extends RequestParams {
 
-    public UpdateDyszParams(String user1, String mi,String zhanghao,String ming,String beizhu,String xinyong,String mima,String erdpei,String sandpei,
+    public UpdateDyszParams(String user1, String mi,String zhanghao,String ming,String beizhu,String xinyong,
+                            String zhancheng,String mima,String erdpei,String sandpei,
                             String sidpei,String erxpei,String sanxpei,String sixpei) {
         super(MyData.URL_updateDysz);
         addBodyParameter("user1", user1);
@@ -20,6 +21,7 @@ public class UpdateDyszParams extends RequestParams {
         addBodyParameter("ming", ming);
         addBodyParameter("beizhu", beizhu);
         addBodyParameter("xinyong", xinyong);
+        addBodyParameter("bili",zhancheng);
         addBodyParameter("mima", mima);
         addBodyParameter("erd", erdpei);
         addBodyParameter("sand", sandpei);

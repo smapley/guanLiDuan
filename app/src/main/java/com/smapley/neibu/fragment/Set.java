@@ -19,6 +19,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.smapley.neibu.R;
 import com.smapley.neibu.activity.Gaimi;
 import com.smapley.neibu.activity.Login;
+import com.smapley.neibu.activity.MyHeZhuang;
 import com.smapley.neibu.activity.ZongHuo;
 import com.smapley.neibu.http.params.Reg2Params;
 import com.smapley.neibu.http.service.GengxinService;
@@ -48,6 +49,8 @@ public class Set extends Fragment {
     private TextView set_item3;
     @ViewInject(R.id.set_item4)
     private TextView set_item4;
+    @ViewInject(R.id.set_item5)
+    private TextView set_item5;
 
 
     @Override
@@ -61,7 +64,7 @@ public class Set extends Fragment {
         title_item2.setText("设置");
     }
 
-    @Event({R.id.set_item1, R.id.set_item2, R.id.set_item3,R.id.set_item4})
+    @Event({R.id.set_item1, R.id.set_item2, R.id.set_item3,R.id.set_item4,R.id.set_item5})
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.set_item1:
@@ -87,6 +90,9 @@ public class Set extends Fragment {
             case R.id.set_item4:
                 startActivity(new Intent(getActivity(),ZongHuo.class));
                 break;
+            case R.id.set_item5:
+                startActivity(new Intent(getActivity(),MyHeZhuang.class));
+                break;
         }
     }
 
@@ -96,6 +102,8 @@ public class Set extends Fragment {
             SharedPreferences sp_user = getActivity().getSharedPreferences("user", getActivity().MODE_PRIVATE);
             SharedPreferences.Editor editor = sp_user.edit();
             editor.putBoolean("islogin", false);
+            editor.putString("user1","");
+            editor.putString("mi","");
             editor.commit();
             MyData.Login = false;
             startActivity(new Intent(getActivity(), Login.class));

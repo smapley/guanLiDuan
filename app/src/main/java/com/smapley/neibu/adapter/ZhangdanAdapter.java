@@ -63,13 +63,17 @@ public class ZhangdanAdapter extends BaseAdapter {
         viewHolder.item3.setText(map.get("huishui"));
         viewHolder.item4.setText(map.get("zhongjiang"));
         viewHolder.item5.setText(map.get("yingkui"));
-        if(map.get("yanse").toString().equals("1")){
-            viewHolder.item6.setTextColor(Color.RED);
-        }else{
-            viewHolder.item6.setTextColor(Color.BLUE);
-        }
-        viewHolder.item6.setText(map.get("zonghe"));
+        if(map.get("qishu")!=null)
+            viewHolder.item6.setText(map.get("qishu"));
+        else {
 
+            if (map.get("yanse").toString().equals("1")) {
+                viewHolder.item6.setTextColor(Color.RED);
+            } else {
+                viewHolder.item6.setTextColor(Color.BLUE);
+            }
+            viewHolder.item6.setText(map.get("zonghe"));
+        }
 
         return convertView;
     }

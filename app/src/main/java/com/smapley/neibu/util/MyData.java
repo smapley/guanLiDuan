@@ -12,7 +12,7 @@ public class MyData {
     public static String PassWord;
     public static boolean Login = false;
 
-    private static final String BASE_URL = "http://120.25.208.188/xiong/";
+    private static final String BASE_URL = "http://120.25.208.188/neibu/";
 
     public final static String URL_reg=BASE_URL+"regG1.php";
     public final static String URL_reg1=BASE_URL+"reg8.php";
@@ -26,6 +26,9 @@ public class MyData {
     public final static String URL_reg2 = BASE_URL + "reg2.php";
     public final static String URL_gengxin = BASE_URL + "gengxin.php";
     public final static String URL_reggaimi = BASE_URL + "reggaimiG1.php";
+    public final static String URL_getGhz = BASE_URL + "getGhz.php";
+    public final static String URL_getGzhangdanhz = BASE_URL + "getGzhangdanhz.php";
+    public final static String URL_updateGhz = BASE_URL + "updateGhz.php";
     public final static String URL_xiazai = "http://www.newera98.com/guanli.apk";
 
     /**
