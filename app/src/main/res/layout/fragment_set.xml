@@ -36,7 +36,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="我的合庄"
+                android:text="拦码"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

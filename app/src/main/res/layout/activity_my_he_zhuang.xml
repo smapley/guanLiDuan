@@ -13,7 +13,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:stretchColumns="0,1">
+            android:stretchColumns="1">
 
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
@@ -26,6 +26,7 @@
                     android:textSize="@dimen/tag_textsize" />
             </TableRow>
 
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -34,18 +35,87 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/tag_textsize" />
 
-                <EditText
-                    android:id="@+id/zhuang_item1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                <TextView />
             </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口口XX    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item11"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口X口X    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item12"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口XX口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item13"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    X口口X    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item14"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    X口X口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item15"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    XX口口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item16"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -54,18 +124,61 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/tag_textsize" />
 
-                <EditText
-                    android:id="@+id/zhuang_item2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                <TextView />
             </TableRow>
+
+            <TableRow android:layout_marginTop="10dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口口口X    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item21"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口口X口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item22"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    口X口口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item23"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="@dimen/login_marginTop">
+
+                <TextView
+                    android:gravity="center"
+                    android:text="    X口口口    "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tag_textsize" />
+
+                <EditText
+                    android:id="@+id/zhuang_item24"
+                    style="@style/myhezhuang_editext" />
+            </TableRow>
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -76,16 +189,9 @@
 
                 <EditText
                     android:id="@+id/zhuang_item3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                    style="@style/myhezhuang_editext" />
             </TableRow>
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -96,16 +202,9 @@
 
                 <EditText
                     android:id="@+id/zhuang_item4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                    style="@style/myhezhuang_editext" />
             </TableRow>
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -116,16 +215,9 @@
 
                 <EditText
                     android:id="@+id/zhuang_item5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                    style="@style/myhezhuang_editext" />
             </TableRow>
+
             <TableRow android:layout_marginTop="@dimen/login_marginTop">
 
                 <TextView
@@ -136,15 +228,7 @@
 
                 <EditText
                     android:id="@+id/zhuang_item6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/textview_circle2s"
-                    android:ems="11"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textCursorDrawable="@color/chengse" />
+                    style="@style/myhezhuang_editext" />
             </TableRow>
         </TableLayout>
     </ScrollView>
